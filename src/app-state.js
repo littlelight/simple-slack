@@ -16,3 +16,13 @@ export function selectConversation(state, conversationId) {
     selectedConversationId: conversationId
   };
 }
+
+export function getMainViewModel(state) {
+  const selectedConversation =
+    state.conversations.find((conversation) => conversation.id === state.selectedConversationId) ?? null;
+
+  return {
+    selectedConversation,
+    isEmpty: selectedConversation === null
+  };
+}
