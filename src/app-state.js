@@ -21,6 +21,18 @@ export function createInitialState() {
         name: "Sam",
         status: "Writing docs"
       }
+    ],
+    conversations: [
+      {
+        id: "conversation-1",
+        name: "Jordan",
+        summary: "Design review later today"
+      },
+      {
+        id: "conversation-2",
+        name: "# launch-plan",
+        summary: "Planning notes live here"
+      }
     ]
   };
 }

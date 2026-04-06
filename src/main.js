@@ -1,10 +1,5 @@
 import { createInitialState } from "./app-state.js";
 
-const sidebarItems = [
-  { id: "placeholder-1", name: "Jordan", summary: "Design review later today", isActive: true },
-  { id: "placeholder-2", name: "# launch-plan", summary: "Planning notes live here", isActive: false }
-];
-
 const appElement = document.querySelector("#app");
 const state = createInitialState();
 
@@ -17,11 +12,11 @@ appElement.innerHTML = `
       <section>
         <h2 class="sidebar__section-title">Conversations</h2>
         <ul class="conversation-list">
-          ${sidebarItems
+          ${state.conversations
             .map(
               (item) => `
                 <li>
-                  <button type="button" class="${item.isActive ? "is-active" : ""}">
+                  <button type="button">
                     <span>${item.name}</span>
                     <span class="conversation-list__meta">${item.summary}</span>
                   </button>
