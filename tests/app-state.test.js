@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { createInitialState } from "../src/app-state.js";
+import { createInitialState, getMainViewModel, selectConversation } from "../src/app-state.js";
 
 test("initial state has the expected shared shape", () => {
   const state = createInitialState();
@@ -13,4 +13,13 @@ test("initial state has the expected shared shape", () => {
   assert.equal(state.selectedConversationId, null);
   assert.equal(state.users.length >= 3, true);
   assert.equal(state.conversations.length >= 2, true);
+});
+
+test("selecting a conversation updates active chat state", () => {
+  const nextState = selectConversation(createInitialState(), "conversation-1");
+  const viewModel = getMainViewModel(nextState);
+
+  assert.equal(nextState.selectedConversationId, "conversation-1");
+  assert.equal(viewModel.selectedConversation?.id, "conversation-1");
+  assert.equal(viewModel.isEmpty, false);
 });
