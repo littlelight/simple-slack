@@ -116,3 +116,21 @@ body {
   color: #647089;
   line-height: 1.5;
 }
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.empty-state__content {
+  max-width: 420px;
+}
+
+.empty-state__eyebrow {
+  margin: 0 0 10px;
+  color: #647089;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
