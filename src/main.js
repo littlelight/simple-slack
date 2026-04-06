@@ -1,9 +1,12 @@
+import { createInitialState } from "./app-state.js";
+
 const sidebarItems = [
   { id: "placeholder-1", name: "Jordan", summary: "Design review later today", isActive: true },
   { id: "placeholder-2", name: "# launch-plan", summary: "Planning notes live here", isActive: false }
 ];
 
 const appElement = document.querySelector("#app");
+const state = createInitialState();
 
 appElement.innerHTML = `
   <div class="app-shell">
