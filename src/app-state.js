@@ -43,6 +43,14 @@ export function createInitialState() {
         conversationId: "conversation-2",
         body: "Planning notes live here"
       }
-    ]
+    ],
+    selectedConversationId: null
+  };
+}
+
+export function selectConversation(state, conversationId) {
+  return {
+    ...state,
+    selectedConversationId: conversationId
   };
 }
