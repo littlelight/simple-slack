@@ -18,7 +18,7 @@ appElement.innerHTML = `
                 <li>
                   <button type="button">
                     <span>${item.name}</span>
-                    <span class="conversation-list__meta">${item.summary}</span>
+                    <span class="conversation-list__meta">${getConversationSummary(item.id)}</span>
                   </button>
                 </li>
               `
@@ -42,3 +42,10 @@ appElement.innerHTML = `
     </main>
   </div>
 `;
+
+function getConversationSummary(conversationId) {
+  return (
+    state.messages.find((message) => message.conversationId === conversationId)?.body ??
+    "No messages yet"
+  );
+}

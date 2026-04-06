@@ -25,13 +25,23 @@ export function createInitialState() {
     conversations: [
       {
         id: "conversation-1",
-        name: "Jordan",
-        summary: "Design review later today"
+        name: "Jordan"
       },
       {
         id: "conversation-2",
-        name: "# launch-plan",
-        summary: "Planning notes live here"
+        name: "# launch-plan"
+      }
+    ],
+    messages: [
+      {
+        id: "message-1",
+        conversationId: "conversation-1",
+        body: "Design review later today"
+      },
+      {
+        id: "message-2",
+        conversationId: "conversation-2",
+        body: "Planning notes live here"
       }
     ]
   };
