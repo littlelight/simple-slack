@@ -31,12 +31,15 @@ appElement.innerHTML = `
     </aside>
 
     <main class="main-panel">
-      <section class="main-panel__card">
-        <p class="main-panel__eyebrow">Chat Panel</p>
-        <h2 class="main-panel__title">Main conversation area</h2>
-        <p class="main-panel__body">
-          This panel is reserved for the active conversation content.
-        </p>
+      <section class="main-panel__card empty-state">
+        <div class="empty-state__content">
+          <p class="empty-state__eyebrow">No conversation selected</p>
+          <h2 class="main-panel__title">Pick a conversation to get started.</h2>
+          <p class="main-panel__body">
+            The sidebar is ready, and the main panel now has a dedicated empty state
+            until an active thread is selected.
+          </p>
+        </div>
       </section>
     </main>
   </div>
