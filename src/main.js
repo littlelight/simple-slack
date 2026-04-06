@@ -29,5 +29,15 @@ appElement.innerHTML = `
         </ul>
       </section>
     </aside>
+
+    <main class="main-panel">
+      <section class="main-panel__card">
+        <p class="main-panel__eyebrow">Chat Panel</p>
+        <h2 class="main-panel__title">Main conversation area</h2>
+        <p class="main-panel__body">
+          This panel is reserved for the active conversation content.
+        </p>
+      </section>
+    </main>
   </div>
 `;

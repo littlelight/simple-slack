@@ -21,6 +21,8 @@ body {
 
 .app-shell {
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: 320px 1fr;
 }
 
 .sidebar {
@@ -79,4 +81,38 @@ body {
   margin-top: 4px;
   color: var(--sidebar-muted);
   font-size: 0.86rem;
+}
+
+.main-panel {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.main-panel__card {
+  height: 100%;
+  min-height: calc(100vh - 48px);
+  padding: 24px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #d9deea;
+}
+
+.main-panel__eyebrow {
+  margin: 0 0 6px;
+  color: #647089;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.main-panel__title {
+  margin: 0 0 12px;
+  color: #19202b;
+  font-size: 1.7rem;
+}
+
+.main-panel__body {
+  margin: 0;
+  color: #647089;
+  line-height: 1.5;
 }
