@@ -23,3 +23,10 @@ test("selecting a conversation updates active chat state", () => {
   assert.equal(viewModel.selectedConversation?.id, "conversation-1");
   assert.equal(viewModel.isEmpty, false);
 });
+
+test("empty-state logic works when no conversation is selected", () => {
+  const viewModel = getMainViewModel(createInitialState());
+
+  assert.equal(viewModel.selectedConversation, null);
+  assert.equal(viewModel.isEmpty, true);
+});
