@@ -12,7 +12,7 @@ appElement.innerHTML = `
   <div class="app-shell">
     <aside class="sidebar">
       <h1 class="sidebar__title">Simple Slack</h1>
-      <p class="sidebar__subtitle">Sprint 1 app shell</p>
+      <p class="sidebar__subtitle">${state.users.length} teammates loaded</p>
 
       <section>
         <h2 class="sidebar__section-title">Conversations</h2>
