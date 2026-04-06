@@ -1,0 +1,175 @@
+Slack-lite MVP Sprint Board
+
+Project goal
+Build a simple Slack-style chat app with:
+- direct messages
+- group channels
+- profile picture updates
+
+Working rule
+- Complete one feature at a time.
+- Add tests for that feature before moving to the next feature.
+- Do not leave broken tests for later cleanup.
+
+Status legend
+- [TODO]
+- [IN PROGRESS]
+- [DONE]
+
+Sprint 1: App Shell and Shared State
+[TODO] Build the main chat layout
+- Add a sidebar for conversations.
+- Add a main panel for chat content.
+- Show a clean empty state when no conversation is selected.
+
+[TODO] Define shared app state
+- currentUser
+- users
+- conversations
+- messages
+- selectedConversationId
+
+[TODO] Seed the app with mock data
+- Add a few sample users.
+- Add at least one sample DM.
+- Add at least one sample channel.
+
+[TODO] Add tests for app shell and state
+- Test that initial state has the expected shape.
+- Test that selecting a conversation updates active chat state.
+- Test that empty-state logic works when no conversation is selected.
+
+Acceptance criteria
+- The app renders a chat-style layout without errors.
+- Sidebar and main panel both load.
+- Selecting a conversation updates the visible chat.
+- Empty state is shown when no conversation is active.
+
+Sprint 2: Direct Messages
+[TODO] Add a new direct message flow
+- Let the current user choose another user to message.
+- Prevent creating a DM with self.
+
+[TODO] Implement DM conversation logic
+- Create a new direct conversation when none exists.
+- Reuse the existing direct conversation when one already exists.
+
+[TODO] Build DM chat interaction
+- Show message history for the active DM.
+- Add a message composer.
+- Send and render new messages immediately.
+
+[TODO] Add tests for direct messages
+- Test DM creation between two users.
+- Test that the same user pair reuses the existing DM.
+- Test that sending a message stores it in the correct conversation.
+- Test that empty messages are rejected.
+
+Acceptance criteria
+- User can start a DM with another user.
+- Existing DMs are reused instead of duplicated.
+- New DM messages appear immediately in the active thread.
+- Invalid DM actions are blocked safely.
+
+Sprint 3: Group Channels
+[TODO] Add create-channel flow
+- Let the user enter a channel name.
+- Let the user select members.
+
+[TODO] Implement channel state and rendering
+- Store group channels as conversations with type "channel".
+- Render channels in the sidebar.
+- Show channel details in the header.
+
+[TODO] Build channel messaging flow
+- Open a channel from the sidebar.
+- Send messages in the selected channel.
+- Keep channel messages scoped to that channel only.
+
+[TODO] Add tests for group channels
+- Test channel creation with name and members.
+- Test that blank channel names are rejected.
+- Test that channel messages are added to the correct conversation.
+- Test that the sidebar shows newly created channels.
+
+Acceptance criteria
+- User can create a named channel.
+- Selected members are added correctly.
+- New channel appears in the sidebar.
+- Channel messages do not leak into DMs or other channels.
+
+Sprint 4: Profile Picture Updates
+[TODO] Add profile settings entry point
+- Create a simple profile or settings surface for the current user.
+
+[TODO] Implement avatar update flow
+- Support avatar update via image URL for the MVP.
+- Validate blank input and basic invalid input cases.
+
+[TODO] Propagate avatar across UI
+- Sidebar
+- chat header
+- message list
+
+[TODO] Add tests for profile picture updates
+- Test that avatar updates change user state.
+- Test that updated avatar appears across rendered UI.
+- Test that invalid avatar input does not corrupt profile data.
+
+Acceptance criteria
+- User can update their avatar.
+- Avatar updates appear everywhere the user is shown.
+- Invalid inputs are handled safely.
+
+Sprint 5: Persistence
+[TODO] Add save/load state support
+- Save app state to localStorage.
+- Load app state from localStorage on startup.
+
+[TODO] Add fallback behavior
+- Use seed data when storage is empty.
+- Fall back safely when saved data is invalid.
+
+[TODO] Add tests for persistence
+- Test that save writes the expected state shape.
+- Test that load restores saved conversations and messages.
+- Test that invalid saved data falls back to defaults.
+
+Acceptance criteria
+- Refreshing the page preserves app state.
+- Invalid stored data does not break the app.
+- First load still works with seed data.
+
+Sprint 6: Shared Chat Polish
+[TODO] Add message and conversation polish
+- Add timestamps.
+- Add latest-message previews in the sidebar.
+- Keep messages ordered consistently.
+
+[TODO] Improve validation and empty states
+- Reject invalid message submissions.
+- Show friendly empty states for new conversations and channels.
+
+[TODO] Add tests for polish behavior
+- Test chronological message ordering.
+- Test that conversation previews reflect the latest message.
+- Test that validation errors appear for invalid input.
+
+Acceptance criteria
+- Messages display in correct order.
+- Sidebar previews update after new messages.
+- Validation feedback is clear and stable.
+
+Implementation sequence
+1. Sprint 1: App shell and shared state
+2. Sprint 2: Direct messages
+3. Sprint 3: Group channels
+4. Sprint 4: Profile picture updates
+5. Sprint 5: Persistence
+6. Sprint 6: Shared chat polish
+
+Definition of done
+- The feature works in the UI.
+- Tests for that feature are added and passing.
+- Existing tests still pass.
+- The app remains usable before moving on to the next sprint.
